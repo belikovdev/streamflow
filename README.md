@@ -36,13 +36,29 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-# How to run app
+## How to run app
 
-## 1. Use ngrok during development to make sure webhooks work correctly
+### 1. Use ngrok during development to make sure webhooks work correctly
 ```ngrok http --domain=jaguar-capital-constantly.ngrok-free.app 3000```
 
-## 2. Start your SQL database server
+### 2. Start your SQL database server
 
-## 3. Run the app
+### 3. Run the app
 ```npm run dev```
 
+## Tech stack
+
+### ngrok
+ngrok for forwarding webhooks to localhost
+To correctly setup the app locally you should have a domain record in ngrok dashboard
+```https://dashboard.ngrok.com/cloud-edge/domains```
+
+### XAMPP
+XAMPP is used for local MySQL database hosting
+Databse url should be mentioned in .env as ```DATABASE_URL```
+
+### Clerk
+Clerk is used for user management and authorization
+To correctly setup Clerk in Nextjs app is better to follow
+[official docs](https://clerk.com/docs/quickstarts/nextjs)
+and then [add custom sign in/sign up pages](https://clerk.com/docs/references/nextjs/custom-signup-signin-pages)
